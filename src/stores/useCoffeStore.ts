@@ -42,6 +42,7 @@ export const useCoffeStore = create<CoffeState>((set, get) => ({
         return;
       }
 
+
       const response = await axios.get(
         `${BASEURL}/api?limit=${quantityProducts}`,
       );
@@ -49,6 +50,8 @@ export const useCoffeStore = create<CoffeState>((set, get) => ({
       const newProducts = response.data.filter(
         (product: CoffeItem) => !get().productIds.has(product.id),
       );
+
+      if (newProducts.length > 0) {
 
       set({
         products: [...products, ...newProducts],
@@ -58,6 +61,9 @@ export const useCoffeStore = create<CoffeState>((set, get) => ({
           ...newProducts.map(p => p.id),
         ]),
       });
+    }else {
+      console.log("No new products to add.");
+    }
     } catch (error) {
       set({error: 'Failed to load products', isLoading: false, products: []});
     }

@@ -16,7 +16,6 @@ import CoffeImage from '../../assets/SignIn/coffelogo.png';
 import useAuthStore from '../../stores/useAuth';
 import theme from '../../global/theme';
 
-// import { Container } from './styles';
 
 const SignIn: React.FC = () => {
   const {

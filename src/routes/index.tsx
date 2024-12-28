@@ -8,8 +8,6 @@ import useAuthStore from '../stores/useAuth';
 
 const Stack = createStackNavigator();
 
-// import { Container } from './styles';
-
 
 const Routes = () => {
   const {isAuthenticated, loadAuthState} = useAuthStore();
@@ -18,7 +16,6 @@ const Routes = () => {
     loadAuthState();
   }, [])
 
-  console.log(isAuthenticated)
   
   return (
     <NavigationContainer>
