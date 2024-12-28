@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -12,7 +12,13 @@ const Stack = createStackNavigator();
 
 
 const Routes = () => {
-  const {isAuthenticated} = useAuthStore();
+  const {isAuthenticated, loadAuthState} = useAuthStore();
+
+  useEffect(() => {
+    loadAuthState();
+  }, [])
+
+  console.log(isAuthenticated)
   
   return (
     <NavigationContainer>

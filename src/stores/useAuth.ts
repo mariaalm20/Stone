@@ -86,7 +86,7 @@ const useAuthStore = create<AuthState>((set, get) => ({
 
   // Função de logout
   logout: async () => {
-    await AsyncStorage.removeItem('user');
+    await AsyncStorage.removeItem('email');
     await AsyncStorage.removeItem('password');
 
     set({email: '', password: '', isAuthenticated: false});
@@ -94,7 +94,7 @@ const useAuthStore = create<AuthState>((set, get) => ({
 
   // Carregar estado de autenticação do AsyncStorage
   loadAuthState: async () => {
-    const email = await AsyncStorage.getItem('user');
+    const email = await AsyncStorage.getItem('email');
     const password = await AsyncStorage.getItem('password');
 
     if (email && password) {
