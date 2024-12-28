@@ -1,0 +1,22 @@
+{
+    "colors": {
+        "primary": "#2E3034",
+        "secondary": "#D9B573",
+        "background": "#212426",
+        "gray300": "#999AA0",
+        "gray": "#41454C",
+        "grayLight": "#DDDDDD",
+        "white": "#fff",
+    },
+    "fonts": {
+        "n_extralight": "Urbanist-ExtraLight",
+        "n_light": "Urbanist-Light",
+        "n_thin": "Urbanist-Thin",
+        "n_regular": "Urbanist-Regular",
+        "n_medium": "Urbanist-Medium",
+        "n_semibold": "Urbanist-SemiBold",
+        "n_bold": "Urbanist-Bold",
+        "n_extrabold": "Urbanist-ExtraBold",
+        "n_black": "Urbanist-Black"
+    }
+}
