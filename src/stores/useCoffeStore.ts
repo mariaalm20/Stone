@@ -59,7 +59,7 @@ export const useCoffeStore = create<CoffeState>((set, get) => ({
         ]),
       });
     } catch (error) {
-      set({error: 'Failed to load products', isLoading: false});
+      set({error: 'Failed to load products', isLoading: false, products: []});
     }
   },
   searchMore: async () => {
