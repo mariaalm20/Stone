@@ -1,12 +1,28 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {create} from 'zustand';
 
-const isValidEmail = (email: string): boolean => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+  
+  // Verifica se o email contém exatamente um "@" e segue o formato básico
+  const emailParts = email.split('@');
+  if (emailParts.length !== 2) {
+    return false;
+  }
+
+  if (emailParts[1].includes('..')) {
+    return false;
+  }
+
+  if (emailParts[1].split('.').length < 2) {
+    return false;
+  }
+
   return emailRegex.test(email);
 };
 
-const isValidPassword = (password: string): boolean => {
+
+export const isValidPassword = (password: string): boolean => {
   // Critérios para a senha:
   // - Pelo menos 8 caracteres
   // - Pelo menos 1 letra maiúscula
@@ -53,13 +69,13 @@ const useAuthStore = create<AuthState>((set, get) => ({
     set({loading: true});
     const {email, password} = get();
     if (!isValidEmail(email)) {
-      set({emailError: 'Email inválido'});
+      set({emailError: 'Email inválido', isAuthenticated: false});
     } else {
       set({checkEmail: true});
     }
 
     if (!isValidPassword(password)) {
-      set({passwordError: 'Senha inválida'});
+      set({passwordError: 'Senha inválida', isAuthenticated: false});
     } else {
       set({checkPassword: true});
     }
