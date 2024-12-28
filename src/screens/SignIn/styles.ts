@@ -59,5 +59,10 @@ export const styles = StyleSheet.create({
   },
   disableTextButton: {
     color: theme.colors.grayLight,
+  },
+  image: {
+    width: '100%',
+    height: '36%',
+    marginBottom: 30,
   }
 });

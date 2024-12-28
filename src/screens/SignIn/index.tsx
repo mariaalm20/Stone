@@ -1,10 +1,18 @@
 import React from 'react';
-import {Text, View, TouchableOpacity, ActivityIndicator} from 'react-native';
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  ActivityIndicator,
+  Image,
+} from 'react-native';
 import {styles} from './styles';
 import Input from './components/Input';
 
 import LockSVG from '../../assets/SignIn/lock-solid.svg';
 import EmailSVG from '../../assets/SignIn/envelope-solid.svg';
+import CoffeImage from '../../assets/SignIn/coffelogo.png';
+
 import useAuthStore from '../../stores/useAuth';
 import theme from '../../global/theme';
 
@@ -28,6 +36,7 @@ const SignIn: React.FC = () => {
 
   return (
     <View style={styles.background}>
+      <Image style={styles.image} source={CoffeImage} resizeMode="contain" />
       <View style={styles.modal}>
         <Text style={styles.title}>Get Started With Your Coffe Journey</Text>
         <Text style={styles.subTitle}>
