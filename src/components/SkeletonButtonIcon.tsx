@@ -9,6 +9,7 @@ type Props = {
   hasFlag?: boolean;
   textFlag?: number;
   isLoading?: boolean;
+  customStyleButton?: boolean;
 };
 
 const SkeletonButtonIcon = ({
@@ -17,9 +18,16 @@ const SkeletonButtonIcon = ({
   hasFlag = false,
   textFlag,
   isLoading = false,
+  customStyleButton,
 }: Props) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.button}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={
+        customStyleButton
+          ? [styles.button, {borderTopRightRadius: 16}]
+          : [styles.button, {borderTopLeftRadius: 16}]
+      }>
       {hasFlag && (
         <View style={styles.flag}>
           <Text style={styles.quantityOnCart}>{textFlag}</Text>
@@ -43,7 +51,6 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: theme.colors.gray,
-    borderTopLeftRadius: 16,
     borderBottomRightRadius: 16,
     borderBottomLeftRadius: 16,
     alignItems: 'center',

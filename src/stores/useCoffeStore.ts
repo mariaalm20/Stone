@@ -26,7 +26,7 @@ export interface CoffeState {
   loadingAddItem: boolean;
 }
 
-export const coffeStore = create<CoffeState>((set, get) => ({
+export const useCoffeStore = create<CoffeState>((set, get) => ({
   products: [],
   isLoading: false,
   error: null,

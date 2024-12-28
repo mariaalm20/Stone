@@ -7,10 +7,10 @@ import ProductList from './components/List/List';
 import SkeletonButtonIcon from '../../components/SkeletonButtonIcon';
 
 import CartSVG from '../../assets/CoffeListIcons/cart-shopping-solid.svg';
-import {coffeStore} from '../../stores/coffeStore';
-import theme from '../../global/theme';
+import LogoutSVG from '../../assets/SignIn/logout.svg';
 
-// import { Container } from './styles';
+import {useCoffeStore} from '../../stores/useCoffeStore';
+import useAuthStore from '../../stores/useAuth';
 
 const CoffeList: React.FC = () => {
   const {
@@ -22,7 +22,9 @@ const CoffeList: React.FC = () => {
     isLoading,
     quantityItems,
     addItemOnCart,
-  } = coffeStore();
+  } = useCoffeStore();
+
+  const {logout} = useAuthStore();
 
   useEffect(() => {
     fetchProducts();
@@ -31,12 +33,17 @@ const CoffeList: React.FC = () => {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.header}>
-        <Text style={{color: theme.colors.background}}> oi</Text>
+        <SkeletonButtonIcon
+          customStyleButton
+          onPress={logout}
+          Icon={<LogoutSVG width={20} />}
+        />
+
         <Text style={styles.title}>COFFE</Text>
 
         <SkeletonButtonIcon
           onPress={() => {}}
-          Icon={<CartSVG width={20} />}
+          Icon={<CartSVG width={16} />}
           hasFlag={quantityItems !== 0}
           textFlag={quantityItems}
         />

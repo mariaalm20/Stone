@@ -2,7 +2,7 @@ import React from 'react';
 import {FlatList, View} from 'react-native';
 import CardList from '../CardList/CardList';
 import {styles} from './styles';
-import {CoffeItem} from '../../../../stores/coffeStore';
+import {CoffeItem} from '../../../../stores/useCoffeStore';
 import Loading from '../../../../components/Loading';
 
 type Props = {

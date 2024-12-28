@@ -3,7 +3,7 @@ import {Image, Text, View} from 'react-native';
 import {styles} from './styles';
 import SkeletonButtonIcon from '../../../../components/SkeletonButtonIcon';
 import CartSVG from '../../../../assets/CoffeListIcons/plus-solid.svg';
-import {CoffeItem} from '../../../../stores/coffeStore';
+import {CoffeItem} from '../../../../stores/useCoffeStore';
 
 type Props = {
   item: CoffeItem;
