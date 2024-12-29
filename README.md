@@ -1,5 +1,11 @@
 🎉 **Bem-vindo ao Coffe App** 🚀
 
+<div align="center">
+  <img src="assets/layout/Login.png" alt="Coffee List Screen" width="20%"/>
+  <img src="assets/layout/List.png" alt="Sign-In Screen" width="20%"/>
+</div>
+
+
 Este projeto é um aplicativo mobile desenvolvido em React Native com TypeScript, focado na listagem de cafés. Ele oferece uma interface intuitiva para explorar e visualizar informações detalhadas sobre diferentes cafés, utilizando Zustand para gerenciamento eficiente de estado.
 
 ## ℹ️ Sobre o Projeto
